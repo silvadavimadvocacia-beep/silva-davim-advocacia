@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Silva Davim Advocacia | Assessoria Jurídica para Médicos e Clínicas</title>
+  <meta name="description" content="Assessoria jurídica estratégica para médicos e clínicas, com foco em prevenção de riscos, proteção documental, conformidade ética e segurança da atividade médica.">
+  <style>
+    :root {
+      --brown: #442914;
+      --brown-2: #56341c;
+      --brown-3: #6d4a32;
+      --cream: #fff8ef;
+      --cream-2: #f2e5d5;
+      --cream-3: #ead7c0;
+      --ink: #24170f;
+      --muted: #705a49;
+      --line: rgba(68, 41, 20, .16);
+      --gold: #c3a276;
+      --white: #fffdf8;
+      --shadow: 0 28px 70px rgba(36, 23, 15, .14);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--cream); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: linear-gradient(180deg, var(--cream), #f6ebdd 44%, #fffaf3 100%);
+      font-family: "Montserrat", "Avenir Next", "Segoe UI", Arial, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .serif { font-family: "Cormorant Garamond", "Bodoni 72", "Didot", Georgia, serif; font-weight: 500; letter-spacing: 0; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255, 248, 239, .9);
+      border-bottom: 1px solid rgba(68, 41, 20, .1);
+      backdrop-filter: blur(18px);
+    }
+    .nav {
+      width: min(1180px, calc(100% - 36px));
+      min-height: 76px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand img { width: 210px; height: auto; }
+    .nav-links { display: flex; align-items: center; gap: 24px; color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .nav-links a:hover { color: var(--brown); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 1px solid var(--brown);
+      border-radius: 2px;
+      background: var(--brown);
+      color: var(--cream);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(68, 41, 20, .18); background: #341d0e; }
+    .btn.secondary { background: transparent; color: var(--brown); }
+    .btn.secondary:hover { box-shadow: none; background: rgba(68, 41, 20, .05); }
+    .dark .btn { background: var(--cream); color: var(--brown); border-color: var(--cream); }
+    .dark .btn.secondary { background: transparent; color: var(--cream); border-color: rgba(255, 248, 239, .68); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: calc(100vh - 76px);
+      padding: 52px 0 54px;
+      display: grid;
+      align-items: center;
+      background: radial-gradient(circle at 8% 10%, rgba(255,255,255,.72), transparent 28rem), linear-gradient(90deg, var(--cream) 0%, #f7ebdc 54%, var(--brown) 54%, var(--brown) 100%);
+    }
+    .hero::after {
+      content: "SD";
+      position: absolute;
+      right: -6vw;
+      top: 9vh;
+      font-family: Georgia, serif;
+      font-size: clamp(12rem, 28vw, 31rem);
+      line-height: .78;
+      color: rgba(255, 248, 239, .08);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .94fr) minmax(360px, .86fr);
+      align-items: center;
+      gap: clamp(34px, 6vw, 80px);
+    }
+    .eyebrow, .kicker { color: var(--brown-3); font-size: 12px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; }
+    h1 { margin: 18px 0 22px; max-width: 640px; color: var(--brown); font-size: clamp(3.15rem, 6.2vw, 6rem); line-height: .92; }
+    .hero-copy { max-width: 650px; margin: 0; color: #523724; font-size: clamp(1.04rem, 1.8vw, 1.2rem); line-height: 1.82; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .hero-media {
+      position: relative;
+      min-height: 560px;
+      border-left: 1px solid rgba(255, 248, 239, .24);
+      padding: 22px 0 22px 42px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-frame {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      max-height: 620px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: var(--cream-2);
+    }
+    .hero-frame img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.86) contrast(.98); }
+    .hero-logo {
+      position: absolute;
+      left: 70px;
+      top: 50px;
+      width: min(350px, 58%);
+      padding: 18px 20px;
+      background: rgba(68, 41, 20, .72);
+      backdrop-filter: blur(10px);
+    }
+
+    section { padding: clamp(76px, 10vw, 126px) 0; }
+    .wrap { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+    .section-head { display: grid; grid-template-columns: minmax(0, .82fr) minmax(280px, .68fr); gap: clamp(28px, 6vw, 76px); align-items: end; margin-bottom: 46px; }
+    .kicker { margin-bottom: 13px; }
+    h2 { margin: 0; color: var(--brown); font-size: clamp(2.35rem, 5vw, 4.85rem); line-height: .98; }
+    h3 { margin: 0; color: var(--brown); }
+    p { margin: 0; }
+    .lead { color: var(--muted); font-size: 1.04rem; line-height: 1.86; }
+
+    .philosophy { background: var(--white); }
+    .editorial-text { display: grid; grid-template-columns: .82fr 1fr; gap: clamp(28px, 6vw, 76px); align-items: start; }
+    .quote-mark { color: var(--gold); font-size: 13px; font-weight: 800; letter-spacing: .24em; text-transform: uppercase; }
+    .editorial-copy { display: grid; gap: 22px; color: var(--muted); font-size: 1.06rem; line-height: 1.9; }
+
+    .security { background: linear-gradient(180deg, #f6ebdd, var(--cream)); }
+    .mini-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .mini-card { min-height: 230px; padding: 30px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255, 253, 248, .58); }
+    .mini-card span { color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: .18em; }
+    .mini-card h3 { margin-top: 34px; font-size: 1.48rem; line-height: 1.12; }
+    .mini-card p { margin-top: 14px; color: var(--muted); font-size: .96rem; line-height: 1.7; }
+
+
+    .audience { background: var(--white); }
+    .audience-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .audience-card { min-height: 210px; padding: clamp(26px, 4vw, 40px); background: var(--white); }
+    .audience-card span { display: block; color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: .18em; }
+    .audience-card h3 { margin-top: 28px; color: var(--brown); font-size: clamp(1.36rem, 2.2vw, 1.9rem); line-height: 1.1; }
+    .audience-card p { margin-top: 14px; color: var(--muted); line-height: 1.72; }
+    .services { background: var(--white); }
+    .services-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .service { background: var(--white); padding: clamp(28px, 4vw, 44px); min-height: 282px; }
+    .services-grid::after { content: ""; display: block; min-height: 282px; background: var(--white); }
+    .service .num { color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: .18em; }
+    .service h3 { margin-top: 22px; font-size: clamp(1.46rem, 2.4vw, 2.08rem); line-height: 1.08; }
+    .service strong { display: block; margin-top: 14px; color: var(--brown-2); font-size: .92rem; line-height: 1.6; }
+    .service p { margin-top: 15px; color: var(--muted); line-height: 1.78; }
+
+    .dark { background: var(--brown); color: var(--cream); }
+    .dark h2, .dark h3, .dark .kicker { color: var(--cream); }
+    .dark .lead { color: rgba(255, 248, 239, .78); }
+    .why-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: rgba(255, 248, 239, .18); border: 1px solid rgba(255, 248, 239, .18); }
+    .why-card { min-height: 230px; padding: 30px 28px; background: rgba(255, 248, 239, .045); }
+    .why-card h3 { font-size: 1.38rem; line-height: 1.15; }
+    .why-card p { margin-top: 15px; color: rgba(255, 248, 239, .76); line-height: 1.75; }
+
+    .process { background: linear-gradient(180deg, #f6ebdd 0%, var(--white) 100%); }
+    .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; counter-reset: steps; }
+    .step { position: relative; padding-top: 58px; }
+    .step::before { counter-increment: steps; content: "0" counter(steps); position: absolute; top: 0; left: 0; color: var(--brown); font-size: 13px; font-weight: 800; letter-spacing: .2em; }
+    .step::after { content: ""; position: absolute; top: 8px; left: 54px; width: calc(100% - 54px); height: 1px; background: var(--line); }
+    .step h3 { font-size: 1.3rem; line-height: 1.16; }
+    .step p { margin-top: 14px; color: var(--muted); line-height: 1.72; }
+
+    .institutional { background: var(--white); }
+    .institutional-panel { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px, 6vw, 76px); align-items: center; }
+    .brand-block { min-height: 430px; padding: clamp(34px, 5vw, 56px); display: flex; align-items: center; justify-content: center; background: var(--brown); box-shadow: var(--shadow); }
+    .brand-block img { width: min(450px, 92%); }
+    .institutional-copy { display: grid; gap: 22px; color: var(--muted); font-size: 1.06rem; line-height: 1.9; }
+
+
+    .office-section { background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%); }
+    .office-panel { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(300px, .72fr); gap: clamp(30px, 6vw, 78px); align-items: center; }
+    .office-photo { overflow: hidden; background: var(--cream-2); box-shadow: var(--shadow); }
+    .office-photo img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; }
+    .office-caption { padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: .94rem; line-height: 1.78; }
+    .office-caption strong { display: block; margin-bottom: 8px; color: var(--brown); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
+    .faq { background: var(--cream); }
+    .faq-list { border-top: 1px solid var(--line); }
+    details { border-bottom: 1px solid var(--line); padding: 24px 0; }
+    summary { cursor: pointer; list-style: none; color: var(--brown); font-weight: 800; font-size: 1.08rem; line-height: 1.35; }
+    summary::-webkit-details-marker { display: none; }
+    details p { margin-top: 14px; max-width: 860px; color: var(--muted); line-height: 1.78; }
+
+    .cta { padding-bottom: 0; }
+    .cta-grid { display: grid; grid-template-columns: minmax(0, .96fr) minmax(320px, .64fr); gap: clamp(30px, 6vw, 78px); align-items: start; padding-bottom: clamp(70px, 9vw, 110px); }
+    .contact-panel { border-top: 1px solid rgba(255, 248, 239, .22); font-style: normal; }
+    .contact-line { display: grid; grid-template-columns: 42px 1fr; gap: 18px; padding: 21px 0; border-bottom: 1px solid rgba(255, 248, 239, .18); color: rgba(255, 248, 239, .86); line-height: 1.55; overflow-wrap: anywhere; }
+    .contact-line strong { display: block; margin-bottom: 4px; color: var(--cream); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
+    .icon { width: 34px; height: 34px; border: 1px solid rgba(255, 248, 239, .42); border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 800; }
+    .footer { border-top: 1px solid rgba(255, 248, 239, .16); padding: 28px 0; color: rgba(255, 248, 239, .68); font-size: 12px; }
+    .footer-inner { width: min(1180px, calc(100% - 36px)); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+
+    .wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 31; width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; background: var(--brown); color: var(--cream); border: 1px solid rgba(255, 248, 239, .36); box-shadow: 0 16px 34px rgba(36, 23, 15, .28); font-size: 13px; font-weight: 800; letter-spacing: .08em; }
+
+    @media (max-width: 980px) {
+      .nav { padding: 16px 0; }
+      .nav-links { display: none; }
+      .brand img { width: 176px; }
+      .hero { min-height: auto; padding: 46px 0 0; background: linear-gradient(180deg, var(--cream) 0%, #f7ebdc 66%, var(--brown) 66%, var(--brown) 100%); }
+      .hero-inner, .section-head, .editorial-text, .institutional-panel, .cta-grid { grid-template-columns: 1fr; }
+      .hero-media { min-height: auto; padding: 22px 0 42px; border-left: 0; }
+      .hero-frame { aspect-ratio: 16 / 11; }
+      .hero-logo { left: 22px; top: 44px; width: 260px; }
+      .mini-grid, .why-grid, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .audience-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .office-panel { grid-template-columns: 1fr; }
+      .office-photo img { min-height: 320px; }
+    }
+
+    @media (max-width: 640px) {
+      section { padding: 68px 0; }
+      .topbar .btn { display: none; }
+      .brand img { width: 166px; }
+      h1 { max-width: 100%; font-size: clamp(2.7rem, 13vw, 3.65rem); line-height: .98; }
+      h2 { font-size: clamp(2.18rem, 10vw, 3.25rem); }
+      .hero-copy, .lead, .editorial-copy, .institutional-copy { font-size: 1rem; line-height: 1.72; }
+      .btn { width: 100%; white-space: normal; text-align: center; }
+      .hero .btn.secondary { display: none; }
+      .hero-frame { aspect-ratio: 4 / 3; }
+      .hero-logo { display: none; }
+      .mini-grid, .services-grid, .why-grid, .steps { grid-template-columns: 1fr; }
+      .audience-grid { grid-template-columns: 1fr; }
+      .office-photo img { min-height: 230px; }
+      .mini-card, .service, .why-card { min-height: auto; }
+      .services-grid::after { display: none; }
+      .brand-block { min-height: 260px; }
+      .wa-float { right: 16px; bottom: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="#inicio" aria-label="Silva Davim Advocacia"><img src="silva-davim-assets/logo-marrom.png" alt="Silva Davim Advocacia"></a>
+      <div class="nav-links">
+        <a href="#filosofia">Sobre</a>
+        <a href="#para-quem">Para quem é</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#escritorio">Escritório</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <a class="btn" href="https://wa.me/556599724260" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Assessoria jurídica estratégica</div>
+          <h1 id="hero-title" class="serif">Proteção jurídica para médicos e clínicas.</h1>
+          <p class="hero-copy">A Silva Davim Advocacia oferece assessoria jurídica estratégica voltada à prevenção de riscos, proteção documental, conformidade ética e segurança da atividade profissional médica.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://wa.me/556599724260?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento%20com%20a%20Silva%20Davim%20Advocacia." target="_blank" rel="noopener">Agendar Atendimento</a>
+            <a class="btn secondary" href="#servicos">Conheça os Serviços</a>
+          </div>
+        </div>
+        <div class="hero-media" aria-label="Assessoria jurídica médica">
+          <div class="hero-frame"><img src="silva-davim-assets/hero-medical-law.png" alt="Médica e advogada analisando documentos em consultório moderno"></div>
+          <img class="hero-logo" src="silva-davim-assets/logo-branca.png" alt="Silva Davim Advocacia">
+        </div>
+      </div>
+    </section>
+
+    <section id="filosofia" class="philosophy">
+      <div class="wrap editorial-text">
+        <div>
+          <div class="kicker">Nossa filosofia</div>
+          <h2 class="serif">A advocacia pode atuar antes do conflito surgir.</h2>
+        </div>
+        <div class="editorial-copy">
+          <p>Na prática médica, decisões técnicas, comunicação com pacientes, documentação clínica, publicidade profissional e conformidade ética fazem parte da rotina diária.</p>
+          <p>A atuação jurídica preventiva busca fortalecer esses processos, reduzir vulnerabilidades e proporcionar maior segurança ao exercício profissional.</p>
+          <p>Mais do que atuar em demandas já existentes, nossa proposta é auxiliar médicos e clínicas na construção de uma prática mais organizada, estratégica e juridicamente protegida.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="security">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">A rotina médica exige segurança jurídica</div>
+            <h2 class="serif">Enquanto você cuida de decisões clínicas, nós cuidamos da segurança jurídica que sustenta sua prática.</h2>
+          </div>
+          <p class="lead">A atuação consultiva permite organizar documentos, fluxos, comunicação e respostas técnicas antes que situações sensíveis ganhem escala.</p>
+        </div>
+        <div class="mini-grid">
+          <article class="mini-card"><span>01</span><h3 class="serif">Documentação Clínica</h3><p>Estruturação e revisão de documentos utilizados na relação médico-paciente.</p></article>
+          <article class="mini-card"><span>02</span><h3 class="serif">Responsabilidade Profissional</h3><p>Atuação estratégica diante de riscos relacionados ao exercício da medicina.</p></article>
+          <article class="mini-card"><span>03</span><h3 class="serif">Publicidade Médica</h3><p>Orientação jurídica para uma comunicação ética e alinhada às normas aplicáveis.</p></article>
+          <article class="mini-card"><span>04</span><h3 class="serif">LGPD na Saúde</h3><p>Proteção de dados pessoais e sensíveis no ambiente assistencial.</p></article>
+          <article class="mini-card"><span>05</span><h3 class="serif">Processos Ético-Profissionais</h3><p>Defesa técnica em sindicâncias e processos perante os Conselhos de Medicina.</p></article>
+          <article class="mini-card"><span>06</span><h3 class="serif">Governança da Clínica</h3><p>Organização jurídica de fluxos internos, políticas e procedimentos.</p></article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="para-quem" class="audience">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Para quem é</div>
+            <h2 class="serif">Atendimento jurídico voltado à realidade de médicos e clínicas.</h2>
+          </div>
+          <p class="lead">A atuação é indicada para profissionais e estruturas de saúde que buscam organização preventiva, orientação estratégica ou defesa técnica diante de demandas administrativas e judiciais.</p>
+        </div>
+        <div class="audience-grid">
+          <article class="audience-card"><span>01</span><h3 class="serif">Médicos autônomos</h3><p>Profissionais que desejam estruturar documentos, contratos, comunicação com pacientes e rotinas de atendimento com maior segurança.</p></article>
+          <article class="audience-card"><span>02</span><h3 class="serif">Consultórios e clínicas médicas</h3><p>Estruturas que precisam organizar fluxos internos, documentos assistenciais, relações profissionais, LGPD e conformidade ética.</p></article>
+          <article class="audience-card"><span>03</span><h3 class="serif">Profissionais em fase de estruturação</h3><p>Médicos e clínicas em crescimento, abertura ou reorganização, que buscam prevenir vulnerabilidades desde a base da operação.</p></article>
+          <article class="audience-card"><span>04</span><h3 class="serif">Demandas éticas e administrativas</h3><p>Profissionais que necessitam de orientação ou defesa técnica em sindicâncias, processos ético-profissionais e procedimentos perante órgãos regulatórios.</p></article>
+          <article class="audience-card"><span>05</span><h3 class="serif">Demandas judiciais</h3><p>Médicos e clínicas que precisam de análise estratégica, organização documental e atuação defensiva em ações relacionadas à prática médica.</p></article>
+          <article class="audience-card"><span>06</span><h3 class="serif">Publicidade e presença digital</h3><p>Profissionais que utilizam redes sociais, sites ou campanhas e desejam adequar sua comunicação às normas éticas aplicáveis.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Serviços</div>
+            <h2 class="serif">Soluções jurídicas para a prática médica contemporânea.</h2>
+          </div>
+          <p class="lead">Atuação consultiva, preventiva e estratégica para médicos e clínicas que buscam maior segurança jurídica em sua rotina profissional.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service"><span class="num">01</span><h3 class="serif">Adequação Documental Preventiva</h3><strong>Documentação clínica alinhada à prática médica.</strong><p>Serviço voltado à análise, revisão, elaboração e adequação de documentos utilizados na rotina assistencial, como termos de consentimento, formulários de anamnese, fichas de evolução, autorizações e demais registros relacionados ao atendimento médico.</p></article>
+          <article class="service"><span class="num">02</span><h3 class="serif">Consultoria Jurídica Estratégica</h3><strong>Suporte jurídico para a prática médica.</strong><p>Orientação jurídica personalizada para médicos e clínicas em questões relacionadas ao exercício profissional, contratos, publicidade médica, comunicação com pacientes, relações profissionais, normas éticas e demandas da rotina médica.</p></article>
+          <article class="service"><span class="num">03</span><h3 class="serif">LGPD na Saúde</h3><strong>Proteção de dados para médicos e clínicas.</strong><p>Consultoria voltada à adequação à LGPD, com atenção ao tratamento de dados sensíveis em saúde, prontuários, autorizações, fluxos internos, segurança da informação e conformidade regulatória.</p></article>
+          <article class="service"><span class="num">04</span><h3 class="serif">Defesa em Processos Ético-Profissionais</h3><strong>Atuação desde a sindicância até o Processo Ético-Profissional.</strong><p>Defesa técnica de médicos perante Conselhos Regionais e Federal de Medicina, com análise documental, manifestações, defesa, recursos e acompanhamento estratégico.</p></article>
+          <article class="service"><span class="num">05</span><h3 class="serif">Responsabilidade Civil Médica</h3><strong>Defesa estratégica em ações indenizatórias.</strong><p>Atuação na defesa de médicos e clínicas em demandas de responsabilidade civil médica, incluindo análise técnica do caso, organização documental, estratégia defensiva, elaboração de manifestações e acompanhamento processual.</p></article>
+          <article class="service"><span class="num">06</span><h3 class="serif">Governança Jurídica e Compliance</h3><strong>Gestão interna da clínica com segurança jurídica.</strong><p>Estruturação jurídica da gestão interna por meio de normas internas, procedimentos operacionais, protocolos administrativos, manuais da equipe e práticas de compliance voltadas à mitigação de riscos.</p></article>
+          <article class="service"><span class="num">07</span><h3 class="serif">Publicidade Médica e Redes Sociais</h3><strong>Comunicação ética e juridicamente segura.</strong><p>Consultoria para análise e adequação da publicidade médica, redes sociais, sites, campanhas, materiais institucionais e perfis profissionais, observando normas do CFM, legislação aplicável e princípios éticos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Por que escolher a Silva Davim Advocacia?</div>
+            <h2 class="serif">Excelência técnica, estratégia e compreensão da prática médica.</h2>
+          </div>
+          <p class="lead">Unimos visão preventiva, análise jurídica e atenção às particularidades de médicos, consultórios e clínicas.</p>
+        </div>
+        <div class="why-grid">
+          <article class="why-card"><h3 class="serif">Excelência Técnica</h3><p>Profissionais com atuação voltada ao Direito Médico e à LGPD aplicada à Saúde, oferecendo soluções jurídicas estratégicas para médicos e clínicas.</p></article>
+          <article class="why-card"><h3 class="serif">Atuação Preventiva</h3><p>Priorizamos a identificação e redução de riscos jurídicos antes que eles se transformem em demandas administrativas ou judiciais.</p></article>
+          <article class="why-card"><h3 class="serif">Soluções Personalizadas</h3><p>Cada demanda é analisada considerando especialidade médica, rotina assistencial e realidade de cada profissional ou clínica.</p></article>
+          <article class="why-card"><h3 class="serif">Conformidade Ética</h3><p>Orientação baseada na legislação vigente e nas normas éticas e regulatórias aplicáveis ao exercício da medicina.</p></article>
+          <article class="why-card"><h3 class="serif">Comunicação Clara</h3><p>Traduzimos questões jurídicas complexas em orientações práticas, acessíveis, objetivas e tecnicamente fundamentadas.</p></article>
+          <article class="why-card"><h3 class="serif">Atuação Estratégica</h3><p>Unimos análise técnica, visão preventiva e planejamento jurídico para apoiar decisões mais seguras na atividade médica.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona" class="process">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Como funciona</div>
+            <h2 class="serif">Um acompanhamento jurídico estruturado para a sua rotina profissional.</h2>
+          </div>
+          <p class="lead">O atendimento parte de uma leitura cuidadosa da realidade do médico ou da clínica, para que a estratégia jurídica seja proporcional ao risco e aplicável à rotina.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><h3 class="serif">Diagnóstico Jurídico</h3><p>Análise inicial da demanda, da rotina profissional e das principais vulnerabilidades jurídicas.</p></article>
+          <article class="step"><h3 class="serif">Planejamento Estratégico</h3><p>Definição da melhor abordagem conforme o perfil do médico, da clínica e da situação apresentada.</p></article>
+          <article class="step"><h3 class="serif">Implementação</h3><p>Elaboração, revisão documental, orientação jurídica, defesa técnica em demandas administrativas e judiciais, ou estruturação preventiva conforme a necessidade.</p></article>
+          <article class="step"><h3 class="serif">Acompanhamento</h3><p>Suporte contínuo para uma atuação profissional mais organizada, segura e alinhada às normas aplicáveis.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="institutional">
+      <div class="wrap institutional-panel">
+        <div class="brand-block"><img src="silva-davim-assets/logo-branca.png" alt="Silva Davim Advocacia"></div>
+        <div>
+          <div class="kicker">Seção institucional</div>
+          <h2 class="serif">Mais do que defender médicos, buscamos proteger a prática profissional.</h2>
+          <div class="institutional-copy">
+            <p>A atividade médica envolve responsabilidade técnica, decisões sensíveis e constante interação com pacientes, familiares, equipes, plataformas digitais e órgãos regulatórios.</p>
+            <p>Por isso, a atuação jurídica precisa ir além da resposta ao problema já instalado.</p>
+            <p>Na Silva Davim Advocacia, trabalhamos para fortalecer a segurança documental, orientar condutas preventivas, estruturar rotinas internas e oferecer defesa técnica quando a atuação contenciosa se torna necessária.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="escritorio" class="office-section" aria-labelledby="office-title">
+      <div class="wrap office-panel">
+        <figure class="office-photo">
+          <img src="silva-davim-assets/sala-silva-davim-advocacia.webp" alt="Sala de atendimento da Silva Davim Advocacia em Cuiabá/MT">
+        </figure>
+        <div>
+          <div class="kicker">Espaço físico</div>
+          <h2 id="office-title" class="serif">Registro institucional do escritório.</h2>
+          <p class="lead">Imagem do espaço físico de atendimento da Silva Davim Advocacia, em Cuiabá/MT, divulgada em caráter exclusivamente informativo.</p>
+          <p class="office-caption"><strong>Espaço físico</strong>Espaço físico da Silva Davim Advocacia, em Cuiabá/MT, destinado ao atendimento profissional e reservado de clientes. Imagem divulgada em caráter informativo, em observância às normas éticas da advocacia.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Perguntas frequentes</div>
+            <h2 class="serif">Dúvidas comuns antes do atendimento.</h2>
+          </div>
+          <p class="lead">Algumas respostas iniciais para médicos, consultórios e clínicas que buscam apoio jurídico preventivo ou estratégico.</p>
+        </div>
+        <div class="faq-list">
+          <details><summary>A Silva Davim atende apenas clínicas médicas?</summary><p>Não. Atendemos médicos autônomos, consultórios, clínicas médicas e profissionais da saúde que necessitam de suporte jurídico especializado.</p></details>
+          <details><summary>O atendimento é somente em Cuiabá/MT?</summary><p>Não. O escritório está sediado em Cuiabá/MT, mas realiza atendimento em todo o território nacional.</p></details>
+          <details><summary>Quando devo procurar assessoria jurídica preventiva?</summary><p>Preferencialmente antes do surgimento de conflitos, especialmente quando houver necessidade de revisar documentos, organizar a rotina da clínica, adequar publicidade médica, estruturar contratos ou prevenir riscos jurídicos.</p></details>
+          <details><summary>A assessoria inclui revisão de documentos médicos?</summary><p>Sim. Conforme a necessidade do caso, a atuação pode incluir elaboração, revisão ou adequação de documentos utilizados na rotina médica.</p></details>
+          <details><summary>Vocês atuam em sindicâncias no CRM?</summary><p>Sim. Atuamos desde a fase de sindicância até Processos Ético-Profissionais perante os Conselhos de Medicina.</p></details>
+          <details><summary>A LGPD também se aplica a médicos e clínicas?</summary><p>Sim. Médicos e clínicas tratam dados pessoais e dados sensíveis de saúde, razão pela qual devem observar as regras da LGPD e adotar medidas adequadas de proteção, organização e segurança da informação.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="cta dark">
+      <div class="wrap cta-grid">
+        <div>
+          <div class="kicker">Contato</div>
+          <h2 class="serif">Sua prática médica merece segurança jurídica.</h2>
+          <p class="lead">Conte com uma assessoria jurídica estratégica voltada à proteção, organização e segurança da atividade profissional médica.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://wa.me/556599724260?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento%20com%20a%20Silva%20Davim%20Advocacia." target="_blank" rel="noopener">Agendar Atendimento</a>
+            <a class="btn secondary" href="https://mail.google.com/mail/?view=cm&fs=1&to=silvadavim.advocacia@gmail.com&su=Atendimento%20-%20Silva%20Davim%20Advocacia&body=Ol%C3%A1%2C%20gostaria%20de%20entrar%20em%20contato%20com%20a%20Silva%20Davim%20Advocacia." target="_blank" rel="noopener">Enviar e-mail</a>
+          </div>
+        </div>
+        <address class="contact-panel">
+          <a class="contact-line" href="https://wa.me/556599724260" target="_blank" rel="noopener"><span class="icon">WA</span><span><strong>WhatsApp</strong>(65) 99972-4260</span></a>
+          <a class="contact-line" href="https://mail.google.com/mail/?view=cm&fs=1&to=silvadavim.advocacia@gmail.com&su=Atendimento%20-%20Silva%20Davim%20Advocacia&body=Ol%C3%A1%2C%20gostaria%20de%20entrar%20em%20contato%20com%20a%20Silva%20Davim%20Advocacia." target="_blank" rel="noopener"><span class="icon">@</span><span><strong>E-mail</strong>silvadavim.advocacia@gmail.com</span></a>
+          <a class="contact-line" href="https://www.instagram.com/advocaciamedica.silvadavim/" target="_blank" rel="noopener"><span class="icon">IG</span><span><strong>Instagram</strong>@advocaciamedica.silvadavim</span></a>
+          <div class="contact-line"><span class="icon">LOC</span><span><strong>Endereço</strong>Rua Bogotá, nº 510, Espaço Bogotá, Sala 9, Piso 1, Jardim das Américas, Cuiabá/MT.</span></div>
+        </address>
+      </div>
+      <footer class="footer">
+        <div class="footer-inner">
+          <div><strong>Silva Davim Advocacia</strong><br>Assessoria Jurídica Estratégica para Médicos e Clínicas<br>Cuiabá/MT | Atendimento nacional</div>
+          <div class="footer-links"><a href="#filosofia">Sobre</a><a href="#servicos">Serviços</a><a href="#contato">Contato</a><a href="#faq">Perguntas frequentes</a><a href="https://www.instagram.com/advocaciamedica.silvadavim/" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/556599724260" target="_blank" rel="noopener">WhatsApp</a></div>
+        </div>
+      </footer>
+    </section>
+  </main>
+  <a class="wa-float" href="https://wa.me/556599724260" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">WA</a>
+</body>
+</html>
