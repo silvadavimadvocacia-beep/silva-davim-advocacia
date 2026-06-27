@@ -202,12 +202,13 @@
     .institutional-copy .serif { margin-bottom: 8px; }
 
 
-    .office-section { padding-top: clamp(34px, 5vw, 64px); padding-bottom: clamp(34px, 5vw, 58px); border-top: 1px solid var(--line); background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%); }
+    .office-section { position: relative; padding-top: clamp(34px, 5vw, 64px); padding-bottom: clamp(34px, 5vw, 58px); border-top: 1px solid var(--line); background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%); }
+    .office-section::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 1px; background: var(--line); }
     .office-panel { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(300px, .72fr); gap: clamp(30px, 6vw, 78px); align-items: center; }
     .office-section h2 { margin-bottom: 26px; }
     .office-photo { overflow: hidden; background: var(--cream-2); box-shadow: var(--shadow); }
     .office-photo img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; }
-    .office-caption { padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: .94rem; line-height: 1.78; }
+    .office-caption { padding-top: 0; border-top: 0; color: var(--muted); font-size: .94rem; line-height: 1.78; }
     .office-caption .serif { margin-bottom: 14px; }
     .office-caption strong { display: block; margin-bottom: 8px; color: var(--brown); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
     .faq { padding-top: clamp(42px, 6vw, 70px); background: var(--cream); }
@@ -503,8 +504,7 @@
         <div>
           <div class="kicker">Espaço físico</div>
           <h2 id="office-title" class="serif">Registro institucional do escritório.</h2>
-          <p class="lead">Imagem do espaço físico de atendimento da Silva Davim Advocacia, em Cuiabá/MT, divulgada em caráter exclusivamente informativo.</p>
-          <p class="office-caption"><strong>Espaço físico</strong>Espaço físico da Silva Davim Advocacia, em Cuiabá/MT, destinado ao atendimento profissional e reservado de clientes. Imagem divulgada em caráter informativo, em observância às normas éticas da advocacia.</p>
+          <p class="office-caption">Espaço físico da Silva Davim Advocacia, em Cuiabá/MT, destinado ao atendimento profissional e reservado de clientes. Imagem divulgada em caráter informativo, em observância às normas éticas da advocacia.</p>
         </div>
       </div>
     </section>
