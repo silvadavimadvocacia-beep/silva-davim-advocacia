@@ -219,10 +219,10 @@
     .office-caption strong { display: block; margin-bottom: 8px; color: var(--brown); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
     .faq { padding-top: clamp(42px, 6vw, 70px); background: var(--cream); }
     .faq-list { border-top: 1px solid var(--line); }
-    details { border-bottom: 1px solid var(--line); padding: 24px 0; }
+    details { border-bottom: 1px solid var(--line); padding: 28px 0; }
     summary { cursor: pointer; list-style: none; color: var(--brown); font-weight: 800; font-size: 1.08rem; line-height: 1.35; }
     summary::-webkit-details-marker { display: none; }
-    details p { margin-top: 14px; max-width: 860px; color: var(--muted); line-height: 1.78; }
+    details p { margin-top: 18px; max-width: 900px; color: var(--muted); line-height: 1.9; }
 
     .cta { padding-bottom: 0; }
     .cta-grid { display: grid; grid-template-columns: minmax(0, .96fr) minmax(320px, .64fr); gap: clamp(30px, 6vw, 78px); align-items: start; padding-bottom: clamp(70px, 9vw, 110px); }
@@ -231,11 +231,13 @@
     .contact-line { display: grid; grid-template-columns: 42px 1fr; gap: 18px; padding: 21px 0; border-bottom: 1px solid rgba(255, 248, 239, .18); color: rgba(255, 248, 239, .86); line-height: 1.55; overflow-wrap: anywhere; }
     .contact-line strong { display: block; margin-bottom: 4px; color: var(--cream); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
     .icon { width: 34px; height: 34px; border: 1px solid rgba(255, 248, 239, .42); border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 800; }
+    .icon svg { width: 18px; height: 18px; display: block; }
     .footer { border-top: 1px solid rgba(255, 248, 239, .16); padding: 28px 0; color: rgba(255, 248, 239, .68); font-size: 12px; }
     .footer-inner { width: min(1180px, calc(100% - 36px)); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
 
-    .wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 31; width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; background: var(--brown); color: var(--cream); border: 1px solid rgba(255, 248, 239, .36); box-shadow: 0 16px 34px rgba(36, 23, 15, .28); font-size: 13px; font-weight: 800; letter-spacing: .08em; }
+    .wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 31; width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; background: var(--brown); color: var(--cream); border: 1px solid rgba(255, 248, 239, .36); box-shadow: 0 16px 34px rgba(36, 23, 15, .28); font-size: 0; }
+    .wa-float svg { width: 28px; height: 28px; display: block; }
 
     @media (max-width: 1366px) {
       .nav, .wrap, .footer-inner, .hero-inner { width: min(980px, calc(100% - 56px)); }
@@ -316,14 +318,15 @@
       section { padding: 68px 0; }
       .wrap, .hero-inner, .footer-inner { width: min(100% - 32px, 100%); }
       .section-head, .editorial-text, .responsible-panel, .institutional-panel, .office-panel, .cta-grid { gap: 24px; }
-      .topbar .btn { display: none; }
+      .topbar .btn { display: inline-flex; width: auto; min-height: 40px; padding: 0 13px; font-size: 10px; }
       .brand img { width: 166px; }
       h1 { max-width: 100%; font-size: clamp(2.7rem, 13vw, 3.65rem); line-height: .98; }
       h2 { font-size: clamp(2.18rem, 10vw, 3.25rem); }
       .office-section h2, .institutional h2, .cta h2 { margin-bottom: 22px; }
       .hero-copy, .lead, .editorial-copy, .institutional-copy { font-size: 1rem; line-height: 1.72; }
       .btn { width: 100%; white-space: normal; text-align: center; }
-      .hero .btn.secondary { display: none; }
+      .topbar .btn { width: auto; white-space: nowrap; }
+      .hero-actions { gap: 10px; }
       .hero-frame { aspect-ratio: auto; background: transparent; box-shadow: none; }
       .hero-frame img { height: auto; object-fit: contain; object-position: center top; }
       .hero-logo { display: none; }
@@ -362,7 +365,7 @@
           <h1 id="hero-title" class="serif">Proteção jurídica para médicos e clínicas.</h1>
           <p class="hero-copy">A Silva Davim Advocacia oferece assessoria jurídica estratégica voltada à prevenção de riscos, proteção documental, conformidade ética e segurança da atividade profissional médica.</p>
           <div class="hero-actions">
-            <a class="btn" href="https://wa.me/556599724260?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento%20com%20a%20Silva%20Davim%20Advocacia." target="_blank" rel="noopener">Agendar Atendimento</a>
+            <a class="btn" href="https://wa.me/556599724260?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento%20com%20a%20Silva%20Davim%20Advocacia." target="_blank" rel="noopener">Entrar em Contato</a>
             <a class="btn secondary" href="#servicos">Conheça os Serviços</a>
           </div>
         </div>
@@ -533,17 +536,23 @@
         <div class="section-head">
           <div>
             <div class="kicker">Perguntas frequentes</div>
-            <h2 class="serif">Dúvidas comuns antes do atendimento.</h2>
+            <h2 class="serif">Dúvidas comuns antes do atendimento</h2>
           </div>
           <p class="lead">Algumas respostas iniciais para médicos, consultórios e clínicas que buscam apoio jurídico preventivo ou estratégico.</p>
         </div>
         <div class="faq-list">
-          <details><summary>A Silva Davim atende apenas clínicas médicas?</summary><p>Não. Atendemos médicos autônomos, consultórios, clínicas médicas e profissionais da saúde que necessitam de suporte jurídico especializado.</p></details>
-          <details><summary>O atendimento é somente em Cuiabá/MT?</summary><p>Não. O escritório está sediado em Cuiabá/MT, mas realiza atendimento em todo o território nacional.</p></details>
-          <details><summary>Quando devo procurar assessoria jurídica preventiva?</summary><p>Preferencialmente antes do surgimento de conflitos, especialmente quando houver necessidade de revisar documentos, organizar a rotina da clínica, adequar publicidade médica, estruturar contratos ou prevenir riscos jurídicos.</p></details>
-          <details><summary>A assessoria inclui revisão de documentos médicos?</summary><p>Sim. Conforme a necessidade do caso, a atuação pode incluir elaboração, revisão ou adequação de documentos utilizados na rotina médica.</p></details>
-          <details><summary>Vocês atuam em sindicâncias no CRM?</summary><p>Sim. Atuamos desde a fase de sindicância até Processos Ético-Profissionais perante os Conselhos de Medicina.</p></details>
-          <details><summary>A LGPD também se aplica a médicos e clínicas?</summary><p>Sim. Médicos e clínicas tratam dados pessoais e dados sensíveis de saúde, razão pela qual devem observar as regras da LGPD e adotar medidas adequadas de proteção, organização e segurança da informação.</p></details>
+          <details><summary>A Silva Davim atende apenas clínicas médicas?</summary><p>Não. Atendemos médicos autônomos, consultórios, clínicas médicas e demais profissionais da saúde que necessitam de assessoria jurídica especializada.</p></details>
+          <details><summary>O atendimento é somente em Cuiabá/MT?</summary><p>Não. Embora o escritório esteja sediado em Cuiabá/MT, realizamos atendimento em todo o território nacional.</p></details>
+          <details><summary>Quando devo procurar assessoria jurídica preventiva?</summary><p>O ideal é buscar orientação antes do surgimento de conflitos. A atuação preventiva contribui para a revisão de documentos, organização de rotinas, adequação da publicidade médica, análise de contratos e mitigação de riscos jurídicos.</p></details>
+          <details><summary>A assessoria inclui revisão de documentos médicos?</summary><p>Sim. Conforme a necessidade do caso, realizamos a elaboração, revisão e adequação de documentos utilizados na rotina médica, como termos de consentimento, formulários, contratos e outros instrumentos jurídicos.</p></details>
+          <details><summary>Vocês atuam em sindicâncias no CRM?</summary><p>Sim. Prestamos assessoria jurídica desde a fase de sindicância até Processos Ético-Profissionais perante os Conselhos de Medicina, com atuação estratégica e defesa técnica.</p></details>
+          <details><summary>A LGPD também se aplica a médicos e clínicas?</summary><p>Sim. Médicos e clínicas tratam dados pessoais e dados sensíveis de saúde, devendo observar as disposições da Lei Geral de Proteção de Dados e adotar medidas adequadas de proteção das informações.</p></details>
+          <details><summary>Meu consultório realmente precisa de assessoria jurídica preventiva?</summary><p>Independentemente do porte da atividade, a assessoria preventiva auxilia na organização documental, na redução de riscos jurídicos e na adoção de práticas mais seguras para o exercício profissional.</p></details>
+          <details><summary>Posso contratar apenas um serviço específico?</summary><p>Sim. A contratação pode ocorrer de forma pontual para demandas específicas ou por meio de acompanhamento jurídico contínuo, conforme as necessidades do médico ou da clínica.</p></details>
+          <details><summary>Como funciona o primeiro atendimento?</summary><p>O primeiro contato tem como objetivo compreender a demanda apresentada, identificar os principais pontos de atenção e avaliar as soluções jurídicas mais adequadas para o caso.</p></details>
+          <details><summary>A atuação preventiva evita completamente processos judiciais ou ético-profissionais?</summary><p>Nenhuma atuação jurídica pode garantir a inexistência de demandas futuras. Entretanto, a adoção de medidas preventivas contribui significativamente para a redução de vulnerabilidades e para o fortalecimento da segurança jurídica da prática médica.</p></details>
+          <details><summary>Minha clínica já possui documentos. Ainda assim vale a pena revisá-los?</summary><p>Sim. A legislação, as normas éticas e a própria rotina assistencial evoluem constantemente. A revisão periódica dos documentos permite verificar sua adequação às necessidades atuais da atividade médica.</p></details>
+          <details><summary>A publicidade do meu consultório pode ser analisada?</summary><p>Sim. Realizamos análise jurídica de perfis profissionais, sites, campanhas e materiais publicitários, observando as normas do Conselho Federal de Medicina e a legislação aplicável.</p></details>
         </div>
       </div>
     </section>
@@ -555,15 +564,15 @@
           <h2 class="serif">Sua prática médica merece segurança jurídica.</h2>
           <p class="lead">Conte com uma assessoria jurídica estratégica voltada à proteção, organização e segurança da atividade profissional médica.</p>
           <div class="hero-actions">
-            <a class="btn" href="https://wa.me/556599724260?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento%20com%20a%20Silva%20Davim%20Advocacia." target="_blank" rel="noopener">Agendar Atendimento</a>
+            <a class="btn" href="https://wa.me/556599724260?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento%20com%20a%20Silva%20Davim%20Advocacia." target="_blank" rel="noopener">Entrar em Contato</a>
             <a class="btn secondary" href="https://mail.google.com/mail/?view=cm&fs=1&to=silvadavim.advocacia@gmail.com&su=Atendimento%20-%20Silva%20Davim%20Advocacia&body=Ol%C3%A1%2C%20gostaria%20de%20entrar%20em%20contato%20com%20a%20Silva%20Davim%20Advocacia." target="_blank" rel="noopener">Enviar e-mail</a>
           </div>
         </div>
         <address class="contact-panel">
-          <a class="contact-line" href="https://wa.me/556599724260" target="_blank" rel="noopener"><span class="icon">WA</span><span><strong>WhatsApp</strong>(65) 99972-4260</span></a>
+          <a class="contact-line" href="https://wa.me/556599724260" target="_blank" rel="noopener"><span class="icon"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.04 3.2A12.68 12.68 0 0 0 5.2 22.44L3.6 28.8l6.5-1.56A12.63 12.63 0 0 0 16.04 28.8h.01A12.8 12.8 0 0 0 28.8 16.05 12.8 12.8 0 0 0 16.04 3.2Zm.01 23.42h-.01a10.48 10.48 0 0 1-5.34-1.46l-.38-.22-3.86.93.92-3.76-.25-.39a10.48 10.48 0 1 1 8.92 4.9Zm5.75-7.84c-.31-.16-1.86-.92-2.15-1.02-.29-.11-.5-.16-.71.16-.21.31-.81 1.02-.99 1.23-.18.21-.37.24-.68.08-.31-.16-1.32-.49-2.52-1.55-.93-.83-1.56-1.86-1.74-2.17-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.72-.97-2.36-.26-.62-.52-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.31-1.1 1.07-1.1 2.62s1.12 3.04 1.28 3.25c.16.21 2.21 3.37 5.35 4.72.75.32 1.33.51 1.78.65.75.24 1.43.2 1.97.12.6-.09 1.86-.76 2.12-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.37Z"/></svg></span><span><strong>WhatsApp</strong>(65) 99972-4260</span></a>
           <a class="contact-line" href="https://mail.google.com/mail/?view=cm&fs=1&to=silvadavim.advocacia@gmail.com&su=Atendimento%20-%20Silva%20Davim%20Advocacia&body=Ol%C3%A1%2C%20gostaria%20de%20entrar%20em%20contato%20com%20a%20Silva%20Davim%20Advocacia." target="_blank" rel="noopener"><span class="icon">@</span><span><strong>E-mail</strong>silvadavim.advocacia@gmail.com</span></a>
-          <a class="contact-line" href="https://www.instagram.com/advocaciamedica.silvadavim/" target="_blank" rel="noopener"><span class="icon">IG</span><span><strong>Instagram</strong>@advocaciamedica.silvadavim</span></a>
-          <div class="contact-line"><span class="icon">LOC</span><span><strong>Endereço</strong>Rua Bogotá, nº 510, Espaço Bogotá, Sala 9, Piso 1, Jardim das Américas, Cuiabá/MT.</span></div>
+          <a class="contact-line" href="https://www.instagram.com/advocaciamedica.silvadavim/" target="_blank" rel="noopener"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></span><span><strong>Instagram</strong>@advocaciamedica.silvadavim</span></a>
+          <div class="contact-line"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><span><strong>Endereço</strong>Rua Bogotá, nº 510, Espaço Bogotá, Sala 9, Piso 1, Jardim das Américas, Cuiabá/MT.</span></div>
         </address>
       </div>
       <footer class="footer">
@@ -574,6 +583,6 @@
       </footer>
     </section>
   </main>
-  <a class="wa-float" href="https://wa.me/556599724260" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">WA</a>
+  <a class="wa-float" href="https://wa.me/556599724260" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.04 3.2A12.68 12.68 0 0 0 5.2 22.44L3.6 28.8l6.5-1.56A12.63 12.63 0 0 0 16.04 28.8h.01A12.8 12.8 0 0 0 28.8 16.05 12.8 12.8 0 0 0 16.04 3.2Zm.01 23.42h-.01a10.48 10.48 0 0 1-5.34-1.46l-.38-.22-3.86.93.92-3.76-.25-.39a10.48 10.48 0 1 1 8.92 4.9Zm5.75-7.84c-.31-.16-1.86-.92-2.15-1.02-.29-.11-.5-.16-.71.16-.21.31-.81 1.02-.99 1.23-.18.21-.37.24-.68.08-.31-.16-1.32-.49-2.52-1.55-.93-.83-1.56-1.86-1.74-2.17-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.72-.97-2.36-.26-.62-.52-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.31-1.1 1.07-1.1 2.62s1.12 3.04 1.28 3.25c.16.21 2.21 3.37 5.35 4.72.75.32 1.33.51 1.78.65.75.24 1.43.2 1.97.12.6-.09 1.86-.76 2.12-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.37Z"/></svg></a>
 </body>
 </html>
