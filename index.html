@@ -185,7 +185,7 @@
     .why-card h3 { font-size: 1.38rem; line-height: 1.15; }
     .why-card p { margin-top: 15px; color: rgba(255, 248, 239, .76); line-height: 1.75; }
 
-    .process { padding-bottom: clamp(40px, 5vw, 64px); background: linear-gradient(180deg, #f6ebdd 0%, var(--white) 100%); }
+    .process { padding-bottom: clamp(24px, 3vw, 38px); background: linear-gradient(180deg, #f6ebdd 0%, var(--white) 100%); }
     .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; counter-reset: steps; }
     .step { position: relative; padding-top: 58px; }
     .step::before { counter-increment: steps; content: "0" counter(steps); position: absolute; top: 0; left: 0; color: var(--brown); font-size: 13px; font-weight: 800; letter-spacing: .2em; }
@@ -193,7 +193,12 @@
     .step h3 { font-size: 1.3rem; line-height: 1.16; }
     .step p { margin-top: 14px; color: var(--muted); line-height: 1.72; }
 
-    .institutional { padding-top: clamp(40px, 5vw, 64px); padding-bottom: clamp(44px, 6vw, 72px); background: var(--white); }
+    .responsible { padding-top: clamp(28px, 4vw, 48px); background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%); }
+    .responsible-panel { display: grid; grid-template-columns: minmax(0, .76fr) minmax(300px, .74fr); gap: clamp(30px, 6vw, 76px); align-items: start; padding-top: 24px; border-top: 1px solid var(--line); }
+    .responsible-meta { margin-top: 16px; color: var(--brown-3); font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .responsible-copy { display: grid; gap: 22px; color: var(--muted); font-size: 1.06rem; line-height: 1.88; }
+
+    .institutional { padding-top: 0; padding-bottom: clamp(44px, 6vw, 72px); background: var(--white); }
     .institutional-panel { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px, 6vw, 76px); align-items: center; }
     .institutional h2 { margin-bottom: 30px; }
     .brand-block { min-height: 430px; padding: clamp(34px, 5vw, 56px); display: flex; align-items: center; justify-content: center; background: var(--brown); box-shadow: var(--shadow); }
@@ -237,7 +242,7 @@
       .brand img { width: 190px; }
       .topbar .btn { min-height: 44px; padding: 0 18px; font-size: 11px; }
       .hero { min-height: auto; padding: 58px 0 68px; background: linear-gradient(180deg, var(--cream) 0%, #f7ebdc 62%, var(--brown) 62%, var(--brown) 100%); }
-      .hero-inner, .section-head, .editorial-text, .institutional-panel, .office-panel, .cta-grid { grid-template-columns: 1fr; gap: 30px; }
+      .hero-inner, .section-head, .editorial-text, .responsible-panel, .institutional-panel, .office-panel, .cta-grid { grid-template-columns: 1fr; gap: 30px; }
       .section-head { align-items: start; margin-bottom: 38px; }
       .hero-copy, .lead { max-width: 760px; }
       .hero-media { min-height: auto; padding: 0; border-left: 0; }
@@ -271,7 +276,7 @@
       .hero-media { min-height: auto; padding: 0; border-left: 0; }
       .hero-frame { max-height: none; aspect-ratio: 16 / 10; background: transparent; box-shadow: none; }
       .hero-logo { left: 26px; top: 28px; width: min(330px, 52%); }
-      .section-head, .editorial-text, .institutional-panel, .office-panel, .cta-grid { grid-template-columns: 1fr; gap: 28px; }
+      .section-head, .editorial-text, .responsible-panel, .institutional-panel, .office-panel, .cta-grid { grid-template-columns: 1fr; gap: 28px; }
       .section-head { align-items: start; margin-bottom: 38px; }
       h1 { max-width: 780px; font-size: clamp(3rem, 7vw, 4.8rem); line-height: .96; }
       h2 { max-width: 880px; font-size: clamp(2.55rem, 6.2vw, 4.25rem); line-height: 1; }
@@ -288,7 +293,7 @@
       .nav-links { display: none; }
       .brand img { width: 176px; }
       .hero { min-height: auto; padding: 46px 0 0; background: linear-gradient(180deg, var(--cream) 0%, #f7ebdc 66%, var(--brown) 66%, var(--brown) 100%); }
-      .hero-inner, .section-head, .editorial-text, .institutional-panel, .cta-grid { grid-template-columns: 1fr; }
+      .hero-inner, .section-head, .editorial-text, .responsible-panel, .institutional-panel, .cta-grid { grid-template-columns: 1fr; }
       .hero-media { min-height: auto; padding: 22px 0 42px; border-left: 0; }
       .hero-frame { aspect-ratio: 16 / 11; background: transparent; box-shadow: none; }
       .hero-logo { left: 22px; top: 44px; width: 260px; }
@@ -300,15 +305,16 @@
     }
 
     @media (max-width: 640px) {
+      .responsible { padding: 42px 0 42px; }
       .audience { padding-bottom: 32px; }
       .services { padding-top: 36px; }
       .process { padding-bottom: 34px; }
-      .institutional { padding-top: 34px; padding-bottom: 34px; }
+      .institutional { padding-top: 0; padding-bottom: 34px; }
       .office-section { padding-top: 30px; padding-bottom: 32px; }
       .faq { padding-top: 38px; }
       section { padding: 68px 0; }
       .wrap, .hero-inner, .footer-inner { width: min(100% - 32px, 100%); }
-      .section-head, .editorial-text, .institutional-panel, .office-panel, .cta-grid { gap: 24px; }
+      .section-head, .editorial-text, .responsible-panel, .institutional-panel, .office-panel, .cta-grid { gap: 24px; }
       .topbar .btn { display: none; }
       .brand img { width: 166px; }
       h1 { max-width: 100%; font-size: clamp(2.7rem, 13vw, 3.65rem); line-height: .98; }
@@ -475,6 +481,19 @@
           <article class="step"><h3 class="serif">Planejamento Estratégico</h3><p>Definição da melhor abordagem conforme o perfil do médico, da clínica e da situação apresentada.</p></article>
           <article class="step"><h3 class="serif">Implementação</h3><p>Elaboração, revisão documental, orientação jurídica, defesa técnica em demandas administrativas e judiciais, ou estruturação preventiva conforme a necessidade.</p></article>
           <article class="step"><h3 class="serif">Acompanhamento</h3><p>Suporte contínuo para uma atuação profissional mais organizada, segura e alinhada às normas aplicáveis.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="responsible" aria-labelledby="responsible-title">
+      <div class="wrap responsible-panel">
+        <div>
+          <h2 id="responsible-title" class="serif">Responsabilidade técnica da atuação jurídica.</h2>
+          <div class="responsible-meta">Dra. Thenily Silva Davim | OAB/MT 32.033 | Pós-graduada em Direito Médico e da Saúde pelo Complexo de Ensino Renato Saraiva</div>
+        </div>
+        <div class="responsible-copy">
+          <p>A Silva Davim Advocacia é uma sociedade unipessoal de advocacia com atuação voltada à assessoria jurídica estratégica para médicos e clínicas.</p>
+          <p>O trabalho é desenvolvido com foco em prevenção de riscos, organização documental, conformidade ética e defesa técnica em demandas relacionadas à prática médica.</p>
         </div>
       </div>
     </section>
