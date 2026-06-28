@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://silvadavimadvocacia.com.br/sitemap.xml
