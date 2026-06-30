@@ -433,7 +433,7 @@
           </div>
         </div>
         <div class="hero-media" aria-label="Assessoria jurídica médica">
-          <div class="hero-frame"><img src="silva-davim-assets/hero-medical-law.png?v=4" alt="Médica e advogada analisando documentos em consultório moderno"></div>
+          <div class="hero-frame"><img src="silva-davim-assets/hero-medical-law.png?v=5" alt="Médica e advogada analisando documentos em consultório moderno"></div>
         </div>
       </div>
     </section>
@@ -555,7 +555,7 @@
     <section class="responsible" aria-labelledby="responsible-title">
       <div class="wrap responsible-panel">
         <div class="responsible-content">
-          <h2 id="responsible-title" class="serif">A profissional por trás da Silva Davim Advocacia.</h2>
+          <h2 id="responsible-title" class="serif">A profissional por trás da<br><span style="display:inline-block;margin-top:.12em;">Silva Davim Advocacia.</span></h2>
           <div class="responsible-meta">Dra. Thenily Silva Davim | OAB/MT 32.033 | Pós-graduada em Direito Médico e da Saúde pelo Complexo de Ensino Renato Saraiva</div>
           <div class="responsible-copy">
             <p>A Silva Davim Advocacia é uma sociedade unipessoal de advocacia com atuação voltada à assessoria jurídica estratégica para médicos e clínicas.</p>
@@ -653,5 +653,15 @@
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
   <a class="wa-float" href="https://wa.me/556599724260" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.04 3.2A12.68 12.68 0 0 0 5.2 22.44L3.6 28.8l6.5-1.56A12.63 12.63 0 0 0 16.04 28.8h.01A12.8 12.8 0 0 0 28.8 16.05 12.8 12.8 0 0 0 16.04 3.2Zm.01 23.42h-.01a10.48 10.48 0 0 1-5.34-1.46l-.38-.22-3.86.93.92-3.76-.25-.39a10.48 10.48 0 1 1 8.92 4.9Zm5.75-7.84c-.31-.16-1.86-.92-2.15-1.02-.29-.11-.5-.16-.71.16-.21.31-.81 1.02-.99 1.23-.18.21-.37.24-.68.08-.31-.16-1.32-.49-2.52-1.55-.93-.83-1.56-1.86-1.74-2.17-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.72-.97-2.36-.26-.62-.52-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.31-1.1 1.07-1.1 2.62s1.12 3.04 1.28 3.25c.16.21 2.21 3.37 5.35 4.72.75.32 1.33.51 1.78.65.75.24 1.43.2 1.97.12.6-.09 1.86-.76 2.12-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.37Z"/></svg></a>
+  <script>
+    (function () {
+      var whatsappUrl = 'https://wa.me/556599724260';
+      document.addEventListener('click', function (event) {
+        var link = event.target.closest && event.target.closest('a[href^="' + whatsappUrl + '"]');
+        if (!link || typeof fbq !== 'function') return;
+        fbq('track', 'Contact');
+      });
+    })();
+  </script>
 </body>
 </html>
