@@ -255,9 +255,11 @@
 
     .responsible { position: relative; padding-top: clamp(42px, 5vw, 64px); background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%); }
     .responsible::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 1px; background: var(--line); }
-    .responsible-panel { display: grid; grid-template-columns: minmax(0, .76fr) minmax(300px, .74fr); gap: clamp(30px, 6vw, 76px); align-items: start; padding-top: 0; }
+    .responsible-panel { display: grid; grid-template-columns: minmax(0, .96fr) minmax(300px, .74fr); gap: clamp(30px, 6vw, 76px); align-items: start; padding-top: 0; }
     .responsible-meta { margin-top: 24px; color: var(--brown-3); font-size: 12px; font-weight: 800; letter-spacing: .16em; line-height: 1.75; text-transform: uppercase; }
     .responsible-copy { display: grid; gap: 22px; color: var(--muted); font-size: 1.06rem; line-height: 1.88; }
+    .responsible-photo { overflow: hidden; border-radius: 8px; background: var(--cream-2); box-shadow: 0 18px 44px rgba(64, 42, 29, .08); }
+    .responsible-photo img { display: block; width: 100%; height: auto; }
 
     .institutional { padding-top: 0; padding-bottom: clamp(44px, 6vw, 72px); background: var(--white); }
     .institutional-panel { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px, 6vw, 76px); align-items: center; }
@@ -318,6 +320,7 @@
       .mini-grid, .audience-grid, .why-grid, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .service, .services-grid::after { min-height: 250px; }
       .office-photo img { height: auto; min-height: 0; object-fit: contain; }
+      .responsible-photo { width: min(85%, 520px); margin: 0 auto; }
       .brand-block { min-height: 320px; }
       .brand-block {
         width: 100vw;
@@ -551,14 +554,17 @@
 
     <section class="responsible" aria-labelledby="responsible-title">
       <div class="wrap responsible-panel">
-        <div>
-          <h2 id="responsible-title" class="serif">Responsabilidade técnica da atuação jurídica.</h2>
+        <div class="responsible-content">
+          <h2 id="responsible-title" class="serif">A profissional por trás da Silva Davim Advocacia.</h2>
           <div class="responsible-meta">Dra. Thenily Silva Davim | OAB/MT 32.033 | Pós-graduada em Direito Médico e da Saúde pelo Complexo de Ensino Renato Saraiva</div>
+          <div class="responsible-copy">
+            <p>A Silva Davim Advocacia é uma sociedade unipessoal de advocacia com atuação voltada à assessoria jurídica estratégica para médicos e clínicas.</p>
+            <p>O trabalho é desenvolvido com foco em prevenção de riscos, organização documental, conformidade ética e defesa técnica em demandas relacionadas à prática médica.</p>
+          </div>
         </div>
-        <div class="responsible-copy">
-          <p>A Silva Davim Advocacia é uma sociedade unipessoal de advocacia com atuação voltada à assessoria jurídica estratégica para médicos e clínicas.</p>
-          <p>O trabalho é desenvolvido com foco em prevenção de riscos, organização documental, conformidade ética e defesa técnica em demandas relacionadas à prática médica.</p>
-        </div>
+        <figure class="responsible-photo">
+          <img src="silva-davim-assets/dra-thenily-davim.png" alt="Dra. Thenily Silva Davim">
+        </figure>
       </div>
     </section>
 
