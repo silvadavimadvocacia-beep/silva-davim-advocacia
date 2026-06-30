@@ -659,7 +659,12 @@
       document.addEventListener('click', function (event) {
         var link = event.target.closest && event.target.closest('a[href^="' + whatsappUrl + '"]');
         if (!link || typeof fbq !== 'function') return;
+        event.preventDefault();
+        var href = link.href;
         fbq('track', 'Contact');
+        window.setTimeout(function () {
+          window.open(href, '_blank', 'noopener');
+        }, 300);
       });
     })();
   </script>
